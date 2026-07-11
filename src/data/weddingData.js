@@ -33,14 +33,14 @@ export const weddingData = {
 
   // Couple info
   bride: {
-    name: 'Aanya',
-    fullName: 'Aanya Sharma',
+    name: 'Anushka ',
+    fullName: 'Anushka Sharma',
     description: 'A creative soul, lover of classical music, and the light of her family\'s eyes. She brings joy and laughter wherever she goes.',
     image: brideImg,
   },
   groom: {
-    name: 'Kabir',
-    fullName: 'Kabir Raichand',
+    name: 'Virat',
+    fullName: 'Virat Kohli',
     description: 'A visionary architect, passionate photographer, and a true gentleman. Guided by warmth, intellect, and timeless values.',
     image: groomImg,
   },
