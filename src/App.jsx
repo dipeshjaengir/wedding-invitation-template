@@ -17,11 +17,9 @@ import Story from './components/Story';
 import Countdown from './components/Countdown';
 import Events from './components/Events';
 import ContactWidget from './components/ContactWidget';
-
 // Heavier Components (Lazy loaded with Suspense fallbacks)
 const Venue = React.lazy(() => import('./components/Venue'));
 const RSVP = React.lazy(() => import('./components/RSVP'));
-const Gift = React.lazy(() => import('./components/Gift'));
 const Footer = React.lazy(() => import('./components/Footer'));
 
 // Beautiful Luxury loading fallback for Suspense sections
@@ -249,7 +247,6 @@ export const App = () => {
           <Suspense fallback={<ComponentFallback />}>
             <Venue venueData={weddingData.venue} />
             <RSVP rsvpData={weddingData.rsvp} />
-            <Gift giftData={weddingData.gift} />
             <Footer
               brideName={weddingData.bride.name}
               groomName={weddingData.groom.name}

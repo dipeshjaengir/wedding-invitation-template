@@ -28,20 +28,19 @@ import gallery6 from '../assets/images/gallery6.svg';
 import backgroundMusic from '../assets/music/instrumental.mp3';
 
 export const weddingData = {
-  // Theme option: 'gold' | 'red' | 'emerald' | 'rose' | 'white'
   theme: 'gold',
 
   // Couple info
   bride: {
-    name: 'Anushka ',
-    fullName: 'Anushka Sharma',
+    name: 'Ritika',
+    fullName: 'Ritika Sharma',
     description: 'A creative soul, lover of classical music, and the light of her family\'s eyes. She brings joy and laughter wherever she goes.',
     image: brideImg,
   },
   groom: {
-    name: 'Virat',
-    fullName: 'Virat Kohli',
-    description: 'A visionary architect, passionate photographer, and a true gentleman. Guided by warmth, intellect, and timeless values.',
+    name: 'Yogendra',
+    fullName: 'Yogendra Raichand',
+    description: 'Yogendra, son of Mr. Dipesh Raichand, is a visionary architect, passionate photographer, and a true gentleman. Guided by warmth, intellect, and timeless values.',
     image: groomImg,
   },
 
@@ -89,6 +88,7 @@ export const weddingData = {
       venue: 'The Courtyard, Taj Palace',
       address: 'Sardar Patel Marg, Diplomatic Enclave, New Delhi',
       image: eventHaldiImg,
+      mapLink: 'https://maps.google.com/?q=Taj+Palace+New+Delhi+Sardar+Patel+Marg',
     },
     {
       id: 'mehendi',
@@ -99,6 +99,7 @@ export const weddingData = {
       venue: 'The Grand Lawn, Taj Palace',
       address: 'Sardar Patel Marg, Diplomatic Enclave, New Delhi',
       image: eventMehendiImg,
+      mapLink: 'https://maps.google.com/?q=Taj+Palace+New+Delhi+Sardar+Patel+Marg',
     },
     {
       id: 'sangeet',
@@ -109,6 +110,7 @@ export const weddingData = {
       venue: 'Durbar Hall, Taj Palace',
       address: 'Sardar Patel Marg, Diplomatic Enclave, New Delhi',
       image: eventSangeetImg,
+      mapLink: 'https://maps.google.com/?q=Taj+Palace+New+Delhi+Sardar+Patel+Marg',
     },
     {
       id: 'wedding',
@@ -119,6 +121,7 @@ export const weddingData = {
       venue: 'The Royal Pavilions, Taj Palace',
       address: 'Sardar Patel Marg, Diplomatic Enclave, New Delhi',
       image: eventWeddingImg,
+      mapLink: 'https://maps.google.com/?q=Taj+Palace+New+Delhi+Sardar+Patel+Marg',
     },
     {
       id: 'reception',
@@ -129,6 +132,7 @@ export const weddingData = {
       venue: 'Shahjehan Ballroom, Taj Palace',
       address: 'Sardar Patel Marg, Diplomatic Enclave, New Delhi',
       image: eventReceptionImg,
+      mapLink: 'https://maps.google.com/?q=Taj+Palace+New+Delhi+Sardar+Patel+Marg',
     },
   ],
 
@@ -182,19 +186,6 @@ export const weddingData = {
     successMessage: 'Your RSVP has been submitted with grace. We look forward to celebrating with you!',
   },
 
-  // Shagun / Gift details
-  gift: {
-    message: 'Your presence at our wedding is the greatest gift we could ask for. However, if you wish to honor us with a token of blessings, a contribution to our future home is deeply appreciated.',
-    upiId: 'kabir.raichand@okaxis',
-    qrPlaceholder: 'UPI QR Code',
-    bankDetails: {
-      accountName: 'Kabir & Aanya Wedding Fund',
-      bankName: 'HDFC Bank Ltd',
-      accountNumber: '50100293847291',
-      ifsc: 'HDFC0000003',
-    }
-  },
-
   // Contact details
   contact: {
     message: 'For any queries regarding travel, accommodations, or event schedules, please connect with our wedding coordinators.',
@@ -212,7 +203,7 @@ export const weddingData = {
 
   // Social / Family sharing links
   socialLinks: {
-    instagramHashtag: '#AanyaWedKabir',
-    hashtagLink: 'https://www.instagram.com/explore/tags/AanyaWedKabir',
+    instagramHashtag: '#RitikaWedYogendra',
+    hashtagLink: 'https://www.instagram.com/explore/tags/RitikaWedYogendra',
   }
 };

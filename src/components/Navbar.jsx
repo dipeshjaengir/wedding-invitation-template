@@ -14,7 +14,6 @@ export const Navbar = ({ brideName, groomName }) => {
     { id: 'gallery', label: 'Gallery' },
     { id: 'venue', label: 'Venue' },
     { id: 'rsvp', label: 'RSVP' },
-    { id: 'gift', label: 'Gift' },
   ];
 
   useEffect(() => {
