@@ -56,14 +56,14 @@ export const weddingData = {
   story: [
     {
       id: 1,
-      date: 'September 12, 2024',
+      date: 'June 26, 2024',
       title: 'Our First Meeting',
       description: 'In the heart of an old colonial library, we reached for the same poetry collection. A simple smile ignited a conversation that lasted for hours.',
       image: storyFirstDateImg,
     },
     {
       id: 2,
-      date: 'April 20, 2025',
+      date: 'April 9, 2025',
       title: 'The Unspoken Bond',
       description: 'Months of shared cups of filter coffee, walks in the rain, and long quiet drives made us realize that home was no longer a place, but a person.',
       image: storyProposalImg,
