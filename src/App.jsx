@@ -16,6 +16,7 @@ import Hero from './components/Hero';
 import Story from './components/Story';
 import Countdown from './components/Countdown';
 import Events from './components/Events';
+import ContactWidget from './components/ContactWidget';
 
 // Heavier Components (Lazy loaded with Suspense fallbacks)
 const Venue = React.lazy(() => import('./components/Venue'));
@@ -215,6 +216,14 @@ export const App = () => {
           {/* Custom Cursor & Scroll bar depth indicator */}
           <Cursor />
           <ScrollProgress />
+
+          {/* Floating Personal Portfolio Contact Widget */}
+          <ContactWidget />
+
+          {/* Subtle Designer Watermark in bottom right corner */}
+          <div className="fixed bottom-3 right-3 text-[8px] font-heading tracking-[0.25em] text-theme-text uppercase select-none pointer-events-none z-[999]" style={{ opacity: 0.07 }}>
+            Designed by DIPESH
+          </div>
 
           {/* Floating Navbar */}
           <Navbar brideName={weddingData.bride.name} groomName={weddingData.groom.name} />
