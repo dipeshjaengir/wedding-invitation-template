@@ -13,37 +13,49 @@ export const Envelope = ({ monogram, onOpenComplete }) => {
       // 1. Crack wax seal (GSAP animation on SVG paths)
       const tl = gsap.timeline();
       
-      tl.to('.wax-part-1', { x: -75, y: -70, rotation: -40, opacity: 0, duration: 1, ease: 'power3.out' })
-        .to('.wax-part-2', { x: 75, y: -70, rotation: 40, opacity: 0, duration: 1, ease: 'power3.out' }, 0)
-        .to('.wax-part-3', { x: 0, y: 95, rotation: 20, opacity: 0, duration: 1, ease: 'power3.out' }, 0)
-        .to('.wax-text', { opacity: 0, scale: 0.7, duration: 0.4 }, 0)
-        .to('.wax-glare', { opacity: 0, duration: 0.3 }, 0);
+      tl.to('.wax-part-1', { x: -80, y: -75, rotation: -45, opacity: 0, duration: 1.2, ease: 'power3.out' })
+        .to('.wax-part-2', { x: 80, y: -75, rotation: 45, opacity: 0, duration: 1.2, ease: 'power3.out' }, 0)
+        .to('.wax-part-3', { x: 0, y: 105, rotation: 25, opacity: 0, duration: 1.2, ease: 'power3.out' }, 0)
+        .to('.wax-text', { opacity: 0, scale: 0.6, duration: 0.5 }, 0)
+        .to('.wax-glare', { opacity: 0, duration: 0.4 }, 0)
+        .to('.wax-droplet', { opacity: 0, scale: 0, y: 30, stagger: 0.05, duration: 0.6 }, 0);
 
-      // 2. Advance stages sequentially
+      // 2. Advance stages sequentially with cinematic overlap
       setTimeout(() => {
         setStage('openingFlap');
-      }, 1100);
+      }, 900); // 900ms overlap
     } else if (stage === 'openingFlap') {
       setTimeout(() => {
         setStage('slidingCard');
-      }, 1200);
+      }, 1000);
     } else if (stage === 'slidingCard') {
       setTimeout(() => {
         setStage('unfolding');
-      }, 2000);
+      }, 1800);
     } else if (stage === 'unfolding') {
       setTimeout(() => {
         setStage('complete');
         if (onOpenComplete) {
           onOpenComplete();
         }
-      }, 2200);
+      }, 2000);
     }
   }, [stage, onOpenComplete]);
 
   const handleWaxSealClick = () => {
     if (stage !== 'initial') return;
-    setStage('cracking');
+    
+    // Wobble/Vibrate animation before cracking to add weight
+    gsap.timeline({
+      onComplete: () => {
+        setStage('cracking');
+      }
+    })
+    .to('.wax-seal-btn', { x: -4, rotation: -6, duration: 0.08, ease: 'power1.inOut' })
+    .to('.wax-seal-btn', { x: 4, rotation: 6, duration: 0.08, ease: 'power1.inOut' })
+    .to('.wax-seal-btn', { x: -3, rotation: -4, duration: 0.08, ease: 'power1.inOut' })
+    .to('.wax-seal-btn', { x: 3, rotation: 4, duration: 0.08, ease: 'power1.inOut' })
+    .to('.wax-seal-btn', { x: 0, rotation: 0, duration: 0.08, ease: 'power1.inOut' });
   };
 
   // Parallax tracking handler
@@ -52,7 +64,7 @@ export const Envelope = ({ monogram, onOpenComplete }) => {
     const rect = e.currentTarget.getBoundingClientRect();
     const x = (e.clientX - rect.left - rect.width / 2) / (rect.width / 2); // -1 to 1
     const y = (e.clientY - rect.top - rect.height / 2) / (rect.height / 2); // -1 to 1
-    setTilt({ x: x * 10, y: -y * 10 }); // scale rotation angle
+    setTilt({ x: x * 8, y: -y * 8 });
   };
 
   const handleMouseLeave = () => {
@@ -62,30 +74,17 @@ export const Envelope = ({ monogram, onOpenComplete }) => {
   return (
     <div className="fixed inset-0 bg-[#FFFDFB] z-[99999] flex items-center justify-center overflow-hidden p-4 select-none perspective-1200">
       
-      {/* 1. BACKGROUND BOKEH & BLURRED FLORAL DECORATIONS */}
-      {/* Soft spotlight radial lighting gradient */}
+      {/* BACKGROUND BOKEH & BLURRED FLORAL DECORATIONS */}
       <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(232,200,200,0.18)_0%,rgba(107,74,74,0.06)_100%)] pointer-events-none z-0" />
       
       {/* Subtle paper noise texture in background */}
-      <div className="absolute inset-0 opacity-[0.03] bg-[url('data:image/svg+xml,%3Csvg viewBox=%220 0 200 200%22 xmlns=%22http://www.w3.org/2000/svg%22%3E%3Cfilter id=%22noiseFilter%22%3E%3CfeTurbulence type=%22fractalNoise%22 baseFrequency=%220.8%22 numOctaves=%223%22 stitchTiles=%22stitch%22/%3E%3C/filter%3E%3Crect width=%22100%25%22 height=%22100%25%22 filter=%22url(%23noiseFilter)%22/%3E%3C/svg%3E')] z-0 pointer-events-none" />
+      <div className="absolute inset-0 opacity-[0.035] bg-[url('data:image/svg+xml,%3Csvg viewBox=%220 0 200 200%22 xmlns=%22http://www.w3.org/2000/svg%22%3E%3Cfilter id=%22noiseFilter%22%3E%3CfeTurbulence type=%22fractalNoise%22 baseFrequency=%220.8%22 numOctaves=%223%22 stitchTiles=%22stitch%22/%3E%3C/filter%3E%3Crect width=%22100%25%22 height=%22100%25%22 filter=%22url(%23noiseFilter)%22/%3E%3C/svg%3E')] z-0 pointer-events-none" />
 
-      {/* Blurred floral motifs representing luxury card setting */}
+      {/* Blurred floral motifs */}
       <div className="absolute -top-16 -left-16 w-64 h-64 md:w-80 md:h-80 bg-[radial-gradient(circle,rgba(232,200,200,0.45)_0%,transparent_70%)] filter blur-2xl opacity-60 z-0 pointer-events-none" />
       <div className="absolute -bottom-16 -right-16 w-64 h-64 md:w-80 md:h-80 bg-[radial-gradient(circle,rgba(212,175,55,0.25)_0%,transparent_70%)] filter blur-2xl opacity-50 z-0 pointer-events-none" />
 
-      {/* Decorative blurred SVG leaves/flowers in corners */}
-      <div className="absolute top-4 left-4 w-28 h-28 text-theme-primary/10 opacity-30 filter blur-[2px] z-0 pointer-events-none rotate-12">
-        <svg viewBox="0 0 100 100" fill="currentColor">
-          <path d="M50,10 C60,40 40,40 50,10 Z M20,40 C40,50 40,30 20,40 Z M80,40 C60,50 60,30 80,40 Z" />
-        </svg>
-      </div>
-      <div className="absolute bottom-6 right-6 w-32 h-32 text-theme-accent/10 opacity-25 filter blur-[3px] z-0 pointer-events-none -rotate-45">
-        <svg viewBox="0 0 100 100" fill="currentColor">
-          <path d="M50,10 C60,40 40,40 50,10 Z M20,40 C40,50 40,30 20,40 Z M80,40 C60,50 60,30 80,40 Z" />
-        </svg>
-      </div>
-
-      {/* 2. THE TACTILE 3D ENVELOPE (With Parallax Tilt & Breathing) */}
+      {/* THE TACTILE 3D ENVELOPE (With Parallax Tilt & Breathing) */}
       <motion.div
         onMouseMove={handleMouseMove}
         onMouseLeave={handleMouseLeave}
@@ -95,18 +94,18 @@ export const Envelope = ({ monogram, onOpenComplete }) => {
                 rotateY: tilt.x,
                 rotateX: tilt.y,
                 scale: [1, 1.015, 1], // Breathing loop
-                boxShadow: '0 25px 60px -25px rgba(107, 74, 74, 0.22)',
+                boxShadow: '0 30px 70px -30px rgba(107, 74, 74, 0.25)',
               }
             : stage === 'complete'
-            ? { scale: 1.06, rotateY: 0, rotateX: 0, opacity: 0 }
+            ? { scale: 1.08, rotateY: 0, rotateX: 0, opacity: 0 }
             : { scale: 0.98, rotateY: 0, rotateX: 0 }
         }
         transition={
           stage === 'initial'
             ? {
-                scale: { repeat: Infinity, duration: 4.5, ease: 'easeInOut' },
-                rotateY: { type: 'spring', damping: 20 },
-                rotateX: { type: 'spring', damping: 20 },
+                scale: { repeat: Infinity, duration: 4.8, ease: 'easeInOut' },
+                rotateY: { type: 'spring', damping: 24, stiffness: 120 },
+                rotateX: { type: 'spring', damping: 24, stiffness: 120 },
               }
             : { duration: 1.2, ease: [0.16, 1, 0.3, 1] }
         }
@@ -115,10 +114,10 @@ export const Envelope = ({ monogram, onOpenComplete }) => {
         {/* Envelope Shell */}
         <div className="absolute inset-0 preserve-3d">
           
-          {/* Backplate (Pocket backdrop) */}
-          <div className="absolute inset-0 bg-[#E5D2CE] border border-theme-border/30 rounded-2xl shadow-[inset_0_0_20px_rgba(107,74,74,0.08)] z-0" />
+          {/* Backplate (Pocket backdrop with slight edge thickness) */}
+          <div className="absolute inset-0 bg-[#E5D2CE] border border-theme-border/40 rounded-2xl shadow-[inset_0_0_20px_rgba(107,74,74,0.08)] z-0 outline outline-1 outline-white/10" />
 
-          {/* 3. THE folded INVITATION CARD (Slides out & gatefold opens) */}
+          {/* THE FOLDED INVITATION CARD (Slides out & gatefold opens) */}
           <motion.div
             initial={{ y: 0, scale: 0.95 }}
             animate={{
@@ -132,22 +131,31 @@ export const Envelope = ({ monogram, onOpenComplete }) => {
             }}
             className="absolute left-6 right-6 top-6 bottom-6 preserve-3d"
           >
-            {/* Stationery folded Card structure */}
+            {/* Stationery folded Card body with double border and shadows */}
             <div className="w-full h-full bg-[#FFFDFB] border border-theme-border/30 rounded-xl shadow-2xl p-6 relative overflow-hidden flex flex-col items-center justify-between text-center select-none gold-foil-border">
-              
-              {/* Embossed Card Cover (Disappears in unfold stage) */}
+              {/* Subtle inner paper highlight */}
+              <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(255,255,255,0.8)_0%,transparent_100%)] pointer-events-none z-1" />
+
+              {/* Embossed Card Cover */}
               <AnimatePresence>
                 {(stage === 'slidingCard' || stage === 'openingFlap' || stage === 'initial') && (
                   <motion.div
                     exit={{ opacity: 0, scale: 0.96, filter: 'blur(4px)' }}
                     transition={{ duration: 0.7 }}
-                    className="absolute inset-0 bg-[#FFFDFB] rounded-xl flex flex-col items-center justify-center p-6 border border-theme-border/20 z-30 shadow-inner"
+                    className="absolute inset-0 bg-[#FFFDFB] rounded-xl flex flex-col items-center justify-center p-6 border border-theme-border/20 z-30 shadow-[inset_0_0_15px_rgba(107,74,74,0.03)]"
                   >
-                    <span className="font-heading text-[10px] tracking-[0.25em] text-theme-primary uppercase">
+                    {/* Emboss floral graphics in corners */}
+                    <div className="absolute top-2 left-2 w-12 h-12 text-[#6B4A4A]/5 filter drop-shadow-[0.5px_0.5px_0px_white] drop-shadow-[-0.5px_-0.5px_0px_rgba(0,0,0,0.1)] pointer-events-none">
+                      <svg viewBox="0 0 100 100" fill="currentColor">
+                        <path d="M10,10 Q50,0 50,50 Q0,50 10,10" />
+                      </svg>
+                    </div>
+
+                    <span className="font-heading text-[9px] tracking-[0.3em] text-theme-primary uppercase font-semibold">
                       Wedding Invitation
                     </span>
-                    <div className="w-8 h-[1px] bg-theme-primary/30 my-3" />
-                    <h2 className="font-names text-4xl text-theme-text mt-1">Aanya &amp; Kabir</h2>
+                    <div className="w-6 h-[1px] bg-theme-primary/30 my-3" />
+                    <h2 className="font-names text-4xl text-theme-text mt-1 select-none">Aanya &amp; Kabir</h2>
                   </motion.div>
                 )}
               </AnimatePresence>
@@ -200,12 +208,12 @@ export const Envelope = ({ monogram, onOpenComplete }) => {
             </div>
           </motion.div>
 
-          {/* FRONT ENVELOPE COLLARS (V-folds overlays) */}
-          <div className="absolute inset-0 bg-[#E8D9D5] rounded-2xl border border-theme-border/20 z-10 opacity-95 shadow-xl pointer-events-none">
+          {/* FRONT ENVELOPE COLLARS (V-folds overlays with edge thickness shadow) */}
+          <div className="absolute inset-0 bg-[#E8D9D5] rounded-2xl border border-theme-border/25 z-10 opacity-95 shadow-[0_5px_15px_rgba(107,74,74,0.12)] pointer-events-none">
             {/* Left Collar triangular */}
-            <div className="absolute left-0 top-0 bottom-0 w-1/2 bg-gradient-to-r from-theme-card/10 to-transparent [clip-path:polygon(0_0,100%_50%,0_100%)] border-r border-[#DEC9C4]" />
+            <div className="absolute left-0 top-0 bottom-0 w-1/2 bg-gradient-to-r from-theme-card/10 to-transparent [clip-path:polygon(0_0,100%_50%,0_100%)] border-r border-[#DEC9C4] shadow-md" />
             {/* Right Collar triangular */}
-            <div className="absolute right-0 top-0 bottom-0 w-1/2 bg-gradient-to-l from-theme-card/10 to-transparent [clip-path:polygon(100%_0,0_50%,100%_100%)] border-l border-[#DEC9C4]" />
+            <div className="absolute right-0 top-0 bottom-0 w-1/2 bg-gradient-to-l from-theme-card/10 to-transparent [clip-path:polygon(100%_0,0_50%,100%_100%)] border-l border-[#DEC9C4] shadow-md" />
             {/* Bottom Collar triangular */}
             <div className="absolute bottom-0 left-0 right-0 h-1/2 bg-gradient-to-t from-theme-card/15 to-transparent [clip-path:polygon(0_100%,50%_0,100%_100%)] border-t border-[#DECBBF]" />
           </div>
@@ -219,9 +227,16 @@ export const Envelope = ({ monogram, onOpenComplete }) => {
             }}
             transition={{ duration: 1.1, ease: 'easeInOut' }}
             className="absolute left-0 right-0 top-0 h-1/2 bg-[#EADED9] origin-top-hinge preserve-3d rounded-t-2xl [clip-path:polygon(0_0,100%_0,50%_100%)] border-b border-[#D4C3BE] shadow-[0_3px_8px_rgba(107,74,74,0.06)] cursor-pointer"
-          />
+          >
+            {/* Embossed pattern on top flap */}
+            <div className="absolute top-2 left-1/2 transform -translate-x-1/2 w-20 h-8 text-[#6B4A4A]/5 filter drop-shadow-[0.5px_0.5px_0px_white] drop-shadow-[-0.5px_-0.5px_0px_rgba(0,0,0,0.08)]">
+              <svg viewBox="0 0 100 50" fill="currentColor">
+                <path d="M10,0 Q50,40 90,0 Q50,10 10,0" />
+              </svg>
+            </div>
+          </motion.div>
 
-          {/* 4. DETAILS WRITTEN ON ENVELOPE (Foil styled calligraphy) */}
+          {/* DETAILS WRITTEN ON ENVELOPE */}
           {stage === 'initial' && (
             <div className="absolute inset-x-0 bottom-6 z-25 text-center flex flex-col items-center space-y-2 pointer-events-none">
               <span className="font-heading text-[8px] tracking-[0.3em] text-[#8A7070] uppercase font-semibold">
@@ -239,7 +254,7 @@ export const Envelope = ({ monogram, onOpenComplete }) => {
             </div>
           )}
 
-          {/* 5. MOVING LIGHT SWEEP (Gold reflection sweep effect) */}
+          {/* MOVING LIGHT SWEEP */}
           {stage === 'initial' && (
             <div className="absolute inset-0 rounded-2xl overflow-hidden pointer-events-none z-22">
               <div className="absolute top-0 w-1/3 h-full bg-gradient-to-r from-transparent via-white/20 to-transparent skew-x-[-25deg] sheen-light-ref animate-[shine_4.5s_infinite]" style={{
@@ -250,81 +265,83 @@ export const Envelope = ({ monogram, onOpenComplete }) => {
                 @keyframes goldShine {
                   0% { left: -100%; opacity: 0; }
                   10% { opacity: 1; }
-                  30% { left: 200%; opacity: 0; }
+                  35% { left: 200%; opacity: 0; }
                   100% { left: 200%; opacity: 0; }
                 }
               `}} />
             </div>
           )}
 
-          {/* 6. REALISTIC 3D WAX SEAL (Centered overlay, splits with GSAP) */}
+          {/* REALISTIC 3D WAX SEAL BUTTON */}
           <div className="absolute left-1/2 top-1/2 transform -translate-x-1/2 -translate-y-1/2 z-40 flex items-center justify-center">
             <button
               onClick={handleWaxSealClick}
               disabled={stage !== 'initial'}
-              className="relative w-16 h-16 rounded-full flex items-center justify-center cursor-pointer focus:outline-none select-none active:scale-95 transition-transform"
+              className="wax-seal-btn relative w-18 h-18 rounded-full flex items-center justify-center cursor-pointer focus:outline-none select-none active:scale-95 transition-transform"
               aria-label="Crack Wax Seal"
             >
-              {/* Multi-layered Realistic 3D SVG Wax Seal */}
-              <svg viewBox="0 0 100 100" className="w-full h-full filter drop-shadow-[0_4px_8px_rgba(107,74,74,0.32)]">
+              {/* Organic detailed melted seal */}
+              <svg viewBox="0 0 100 100" className="w-full h-full filter drop-shadow-[0_5px_10px_rgba(107,74,74,0.36)]">
                 <defs>
-                  {/* Gloss reflections radial */}
-                  <radialGradient id="waxGlare" cx="30%" cy="30%" r="40%">
+                  {/* Wax base specular shine */}
+                  <radialGradient id="waxGlare" cx="30%" cy="30%" r="45%">
                     <stop offset="0%" stopColor="#FFFFFF" stopOpacity="0.45" />
+                    <stop offset="70%" stopColor="#B76E79" stopOpacity="0.05" />
                     <stop offset="100%" stopColor="#B76E79" stopOpacity="0" />
                   </radialGradient>
                 </defs>
 
-                {/* Part 1 (Left piece) */}
+                {/* Random melted droplets backgrounds (Organic edges details) */}
+                <circle cx="50" cy="50" r="41" fill="#803D47" className="wax-text" opacity="0.15" />
+                <path d="M12,48 C10,40 18,35 22,40 C28,45 15,55 12,48 Z" fill="#9D545F" className="wax-droplet" />
+                <path d="M85,55 C88,48 78,42 75,48 C72,55 82,60 85,55 Z" fill="#9D545F" className="wax-droplet" />
+                <path d="M52,86 C45,88 48,78 52,78 C56,78 60,84 52,86 Z" fill="#9D545F" className="wax-droplet" />
+
+                {/* Main crackable wax segments */}
                 <path
-                  d="M50,15 C29,15 13,31 13,50 C13,58 17,66 23,71 L50,50 Z"
+                  d="M50,13 C27,13 11,29 11,50 C11,59 15,67 22,72 L50,50 Z"
                   fill="#9D545F"
                   className="wax-part-1 origin-center"
                 />
-                
-                {/* Part 2 (Right piece) */}
                 <path
-                  d="M50,15 L50,50 L77,71 C83,66 87,58 87,50 C87,31 71,15 50,15 Z"
+                  d="M50,13 L50,50 L78,72 C85,67 89,59 89,50 C89,29 73,13 50,13 Z"
                   fill="#9D545F"
                   className="wax-part-2 origin-center"
                 />
-                
-                {/* Part 3 (Bottom piece) */}
                 <path
-                  d="M23,71 L50,50 L77,71 C70,81 61,87 50,87 C39,87 30,81 23,71 Z"
+                  d="M22,72 L50,50 L78,72 C71,82 61,89 50,89 C39,89 29,82 22,72 Z"
                   fill="#8A4650"
                   className="wax-part-3 origin-center"
                 />
 
-                {/* Outer melted irregular borders overlay */}
-                <circle cx="50" cy="50" r="33" fill="none" stroke="#A95E6B" strokeWidth="2.5" className="wax-text" opacity="0.4" />
+                {/* Embossed stamp stamp lines */}
+                <circle cx="50" cy="50" r="32" fill="none" stroke="#A95E6B" strokeWidth="2.5" className="wax-text" opacity="0.5" />
 
-                {/* Embossed Monogram stamps inside */}
+                {/* Monogram letters stamped inside */}
                 <text
                   x="50"
                   y="58"
                   fontFamily="'Cinzel', serif"
-                  fontSize="23"
+                  fontSize="24"
                   fontWeight="bold"
                   fill="#F5E6B3"
                   textAnchor="middle"
                   className="wax-text font-bold"
                   style={{
-                    textShadow: '1px 1px 1px rgba(0,0,0,0.5), -0.5px -0.5px 0.5px rgba(255,255,255,0.4)',
+                    textShadow: '1.2px 1.2px 1px rgba(0,0,0,0.55), -0.6px -0.6px 0.5px rgba(255,255,255,0.45)',
                   }}
                   opacity="0.9"
                 >
                   A&amp;K
                 </text>
 
-                {/* Gloss reflection overlay shine */}
-                <circle cx="50" cy="50" r="35" fill="url(#waxGlare)" className="wax-glare pointer-events-none" />
+                {/* Glare reflect */}
+                <circle cx="50" cy="50" r="36" fill="url(#waxGlare)" className="wax-glare pointer-events-none" />
               </svg>
 
-              {/* Subtle animated indicator hand pointing to the wax seal */}
+              {/* Bounce finger indicator */}
               {stage === 'initial' && (
                 <div className="absolute -bottom-14 left-1/2 transform -translate-x-1/2 flex flex-col items-center space-y-1 w-40 pointer-events-none">
-                  {/* Pointing hand finger icon */}
                   <motion.div
                     animate={{ y: [0, -6, 0] }}
                     transition={{ repeat: Infinity, duration: 1.2, ease: 'easeInOut' }}
