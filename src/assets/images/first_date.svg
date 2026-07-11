@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 300" width="100%" height="100%">
+  <rect width="300" height="300" fill="none"/>
+  <!-- Decorative border -->
+  <rect x="15" y="15" width="270" height="270" fill="none" stroke="#D4AF37" stroke-width="0.5" opacity="0.3" rx="4" />
+  
+  <!-- Line Art: Coffee/Library theme -->
+  <g stroke="#D4AF37" fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5">
+    <!-- Heart shape -->
+    <path d="M150,90 C135,70 105,70 105,95 C105,130 150,165 150,165 C150,165 195,130 195,95 C195,70 165,70 150,90 Z" opacity="0.3" fill="none"/>
+    <!-- Stack of Books -->
+    <path d="M90,190 L210,190 L210,210 L90,210 Z" />
+    <path d="M100,165 L200,165 L200,190 L100,190 Z" />
+    <path d="M115,145 L185,145 L185,165 L115,165 Z" />
+    
+    <!-- Steam / Warmth lines -->
+    <path d="M140,115 C138,105 145,100 142,90" stroke-width="1" />
+    <path d="M150,115 C148,105 155,100 152,90" stroke-width="1" />
+    <path d="M160,115 C158,105 165,100 162,90" stroke-width="1" />
+  </g>
+  <!-- Small floral details -->
+  <circle cx="150" cy="40" r="2" fill="#F5E6B3"/>
+  <path d="M140,40 Q150,30 160,40" stroke="#D4AF37" stroke-width="0.5" fill="none"/>
+</svg>

@@ -1,0 +1,27 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 300" width="100%" height="100%">
+  <rect width="300" height="300" fill="none"/>
+  <!-- Decorative border -->
+  <circle cx="150" cy="150" r="100" fill="none" stroke="#D4AF37" stroke-width="0.5" stroke-dasharray="2 4" opacity="0.3"/>
+
+  <!-- Line Art: Dhol and Sitar/Musical Notes -->
+  <g stroke="#D4AF37" fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5">
+    <!-- The Indian Dhol (Drum) -->
+    <!-- Outer Cylinder -->
+    <path d="M100,180 C100,150 200,150 200,180 L180,240 C180,210 120,210 120,240 Z" />
+    <!-- Drum heads -->
+    <ellipse cx="150" cy="180" rx="50" ry="15" />
+    <ellipse cx="150" cy="240" rx="30" ry="10" />
+    
+    <!-- Straps/Lacing on the drum (V-shapes) -->
+    <path d="M105,188 L122,238 L130,194 L142,240 L150,195 L158,240 L170,194 L178,238 L195,188" stroke-width="1" />
+    
+    <!-- Floating Musical Notes -->
+    <path d="M90,110 L90,80 L130,70 L130,100" />
+    <circle cx="80" cy="110" r="8" fill="#F5E6B3" stroke="#D4AF37" />
+    <circle cx="120" cy="100" r="8" fill="#F5E6B3" stroke="#D4AF37" />
+    
+    <path d="M200,100 Q215,80 230,100" stroke-width="1" />
+    <circle cx="200" cy="100" r="5" fill="#D4AF37" />
+    <line x1="205" y1="100" x2="205" y2="80" />
+  </g>
+</svg>

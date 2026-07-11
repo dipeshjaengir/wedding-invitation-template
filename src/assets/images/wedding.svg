@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 300" width="100%" height="100%">
+  <rect width="300" height="300" fill="none"/>
+  <!-- Decorative border -->
+  <circle cx="150" cy="150" r="100" fill="none" stroke="#D4AF37" stroke-width="0.5" stroke-dasharray="2 4" opacity="0.3"/>
+
+  <!-- Line Art: Havan Kund (Sacred Wedding Fire) -->
+  <g stroke="#D4AF37" fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5">
+    <!-- Fire Altar Base (Layered Squares/Rectangles in perspective) -->
+    <!-- Top layer of altar -->
+    <polygon points="100,190 200,190 220,230 80,230" />
+    <!-- Middle layer of altar -->
+    <polygon points="90,200 210,200 210,210 90,210" opacity="0.8" />
+    <!-- Bottom layer of altar -->
+    <polygon points="70,230 230,230 240,245 60,245" />
+    
+    <!-- Sacred Flames (Agni) -->
+    <path d="M150,110 C140,140 165,160 150,190 C170,160 175,140 160,110 C155,130 145,135 150,110 Z" fill="#F5E6B3" stroke="#D4AF37" stroke-width="1" />
+    <path d="M135,130 C125,150 145,165 135,190 Q150,170 145,150 Q140,140 135,130 Z" opacity="0.8" />
+    <path d="M165,130 C175,150 155,165 165,190 Q150,170 155,150 Q160,140 165,130 Z" opacity="0.8" />
+    
+    <!-- Floral Garlands hanging (Jaimala style) -->
+    <path d="M60,80 Q150,130 240,80" stroke-width="1" stroke-dasharray="2 4" />
+    <path d="M70,95 Q150,145 230,95" stroke-width="0.75" stroke-dasharray="2 4" opacity="0.7" />
+  </g>
+</svg>

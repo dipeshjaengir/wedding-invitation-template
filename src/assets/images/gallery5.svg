@@ -1,0 +1,33 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 400" width="100%" height="100%">
+  <rect width="400" height="400" fill="#111111"/>
+  <rect x="15" y="15" width="370" height="370" fill="none" stroke="#D4AF37" stroke-width="1" opacity="0.3" />
+  
+  <!-- Line Art: Traditional hanging decorative lantern (Kandil / Diya) -->
+  <g stroke="#D4AF37" fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5">
+    <!-- Hanging rod/chain -->
+    <line x1="200" y1="40" x2="200" y2="100" stroke-dasharray="3 3" />
+    
+    <!-- Top dome of lantern -->
+    <path d="M170,120 C170,95 230,95 230,120 Z" />
+    <path d="M160,120 L240,120" stroke-width="2" />
+    
+    <!-- Body of the lantern -->
+    <path d="M170,120 L150,220 C150,220 200,240 250,220 L230,120 Z" />
+    
+    <!-- Pattern on lantern body -->
+    <path d="M170,150 Q200,165 230,150" stroke-width="1" opacity="0.7" />
+    <path d="M160,180 Q200,195 240,180" stroke-width="1" opacity="0.7" />
+    <path d="M155,200 Q200,215 245,200" stroke-width="1" opacity="0.7" />
+
+    <!-- Hanging tassels / fringes at the bottom -->
+    <path d="M160,225 L160,280 M180,232 L180,290 M200,235 L200,300 M220,232 L220,290 M240,225 L240,280" stroke-width="1" opacity="0.8" />
+    
+    <!-- Glowing dots at ends of tassels -->
+    <circle cx="160" cy="280" r="2" fill="#F5E6B3" stroke="none" />
+    <circle cx="180" cy="290" r="2" fill="#F5E6B3" stroke="none" />
+    <circle cx="200" cy="300" r="2.5" fill="#D4AF37" stroke="none" />
+    <circle cx="220" cy="290" r="2" fill="#F5E6B3" stroke="none" />
+    <circle cx="240" cy="280" r="2" fill="#F5E6B3" stroke="none" />
+  </g>
+  <text x="200" y="360" font-family="'Cinzel', serif" font-size="12" fill="#F5E6B3" font-weight="bold" text-anchor="middle" letter-spacing="3" opacity="0.6">ROYAL LANTERN</text>
+</svg>

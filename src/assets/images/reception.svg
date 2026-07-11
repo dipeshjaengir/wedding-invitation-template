@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 300" width="100%" height="100%">
+  <rect width="300" height="300" fill="none"/>
+  <!-- Decorative border -->
+  <circle cx="150" cy="150" r="100" fill="none" stroke="#D4AF37" stroke-width="0.5" stroke-dasharray="2 4" opacity="0.3"/>
+
+  <!-- Line Art: Champagne glasses toasting -->
+  <g stroke="#D4AF37" fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5">
+    <!-- Left Glass -->
+    <path d="M120,190 L120,240 M100,240 L140,240" />
+    <path d="M120,190 L140,110 C140,110 110,105 105,130 C100,155 120,190 120,190 Z" />
+    
+    <!-- Right Glass -->
+    <path d="M180,190 L180,240 M160,240 L200,240" />
+    <path d="M180,190 L160,110 C160,110 190,105 195,130 C200,155 180,190 180,190 Z" />
+    
+    <!-- Bubbles/Sparkles floating -->
+    <circle cx="150" cy="100" r="2.5" fill="#F5E6B3" stroke="none" />
+    <circle cx="140" cy="85" r="1.5" fill="#F5E6B3" stroke="none" />
+    <circle cx="160" cy="85" r="1.5" fill="#F5E6B3" stroke="none" />
+    <circle cx="150" cy="70" r="2" fill="#F5E6B3" stroke="none" />
+    
+    <!-- Sparkle star -->
+    <path d="M150,55 L152,60 L157,60 L153,63 L155,68 L150,65 L145,68 L147,63 L143,60 L148,60 Z" stroke-width="0.5" fill="none" opacity="0.8"/>
+  </g>
+</svg>

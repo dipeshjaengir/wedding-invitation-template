@@ -1,0 +1,62 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 500" width="100%" height="100%">
+  <defs>
+    <radialGradient id="goldGlow" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#D4AF37" stop-opacity="0.15" />
+      <stop offset="100%" stop-color="#050505" stop-opacity="0" />
+    </radialGradient>
+  </defs>
+  <!-- Background Glow -->
+  <rect width="400" height="500" fill="url(#goldGlow)" />
+  
+  <!-- Outer border frame -->
+  <rect x="20" y="20" width="360" height="460" fill="none" stroke="#D4AF37" stroke-width="1" opacity="0.3" rx="10" />
+  <rect x="25" y="25" width="350" height="450" fill="none" stroke="#D4AF37" stroke-width="0.5" opacity="0.15" rx="8" />
+
+  <!-- Ornamental Mandala behind -->
+  <circle cx="200" cy="220" r="100" fill="none" stroke="#D4AF37" stroke-width="0.75" opacity="0.25" stroke-dasharray="2 4" />
+  <circle cx="200" cy="220" r="85" fill="none" stroke="#F5E6B3" stroke-width="0.5" opacity="0.2" />
+  
+  <!-- Line Art of Indian Bride -->
+  <g stroke="#D4AF37" fill="none" stroke-linecap="round" stroke-linejoin="round">
+    <!-- Hair & Head shape contour -->
+    <path d="M150,260 C150,180 170,140 200,140 C230,140 250,180 250,260" stroke-width="2" />
+    <!-- Maang Tikka (Forehead ornament) -->
+    <line x1="200" y1="140" x2="200" y2="165" stroke-width="1.5" />
+    <circle cx="200" cy="170" r="4" fill="#F5E6B3" />
+    <path d="M195,170 L200,178 L205,170 Z" fill="#D4AF37" />
+    
+    <!-- Face profile line (frontal/semi-profile stylized) -->
+    <path d="M170,240 C170,290 230,290 230,240" stroke-width="1.5" />
+    
+    <!-- Bindi -->
+    <circle cx="200" cy="205" r="3" fill="#D4AF37" stroke="none" />
+    
+    <!-- Nose ring (Nath) -->
+    <circle cx="212" cy="235" r="10" stroke-width="1" />
+    <line x1="222" y1="235" x2="235" y2="230" stroke-width="0.75" />
+    
+    <!-- Jhumka (Earrings) -->
+    <!-- Left Earring -->
+    <path d="M165,230 L165,250 M160,250 L170,250 Q165,260 165,250" stroke-width="1" />
+    <circle cx="165" cy="255" r="2" fill="#D4AF37" />
+    <!-- Right Earring -->
+    <path d="M235,230 L235,250 M230,250 L240,250 Q235,260 235,250" stroke-width="1" />
+    <circle cx="235" cy="255" r="2" fill="#D4AF37" />
+
+    <!-- Dupatta / Veil drape curves -->
+    <path d="M140,220 C110,240 100,320 120,400" stroke-width="1.5" opacity="0.8" />
+    <path d="M260,220 C290,240 300,320 280,400" stroke-width="1.5" opacity="0.8" />
+    <path d="M140,220 C180,180 220,180 260,220" stroke-width="1.5" opacity="0.8" />
+    
+    <!-- Necklace -->
+    <path d="M180,285 Q200,305 220,285" stroke-width="2" />
+    <path d="M175,292 Q200,315 225,292" stroke-width="1" opacity="0.7" />
+    
+    <!-- Shoulders / Traditional Attire drape -->
+    <path d="M145,340 C145,310 170,300 200,300 C230,300 255,310 255,340" stroke-width="1.5" />
+    <path d="M130,420 L150,335 C170,335 230,335 250,335 L270,420" stroke-width="2" />
+  </g>
+
+  <!-- Typography Labels inside image -->
+  <text x="200" y="445" font-family="'Cinzel', serif" font-size="18" fill="#D4AF37" font-weight="bold" text-anchor="middle" letter-spacing="3">THE BRIDE</text>
+</svg>

@@ -1,0 +1,166 @@
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700;800&family=Great+Vibes&family=Poppins:wght@300;400;500;600&display=swap');
+
+@import "tailwindcss";
+
+@theme {
+  --font-heading: "Cinzel", serif;
+  --font-body: "Poppins", sans-serif;
+  --font-names: "Great Vibes", cursive;
+
+  /* Theme variables bound to CSS variables injected by useTheme */
+  --color-theme-primary: var(--theme-primary, #B76E79);
+  --color-theme-accent: var(--theme-accent, #D4AF37);
+  --color-theme-bg: var(--theme-bg, #FFF8F5);
+  --color-theme-card: var(--theme-card, #FFFFFF);
+  --color-theme-text: var(--theme-text, #6B4A4A);
+  --color-theme-text-muted: var(--theme-text-muted, #8A7070);
+  --color-theme-glow: var(--theme-glow, rgba(183, 110, 121, 0.12));
+  --color-theme-border: var(--theme-border, #E8C8C8);
+}
+
+/* Custom CSS Scrollbar and styling utilities */
+html {
+  scroll-behavior: smooth;
+  background-color: var(--theme-bg, #FFF8F5);
+  color: var(--theme-text, #6B4A4A);
+  overflow-x: hidden;
+}
+
+body {
+  font-family: var(--font-body), sans-serif;
+  margin: 0;
+  padding: 0;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  position: relative;
+}
+
+/* Procedural Luxury Paper Texture Overlay */
+body::before {
+  content: "";
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  opacity: 0.045;
+  pointer-events: none;
+  z-index: 99999;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
+}
+
+/* Warm spotlight overlay */
+.spotlight-overlay {
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle at 50% 30%, rgba(255, 248, 245, 0) 20%, rgba(107, 74, 74, 0.05) 100%);
+  pointer-events: none;
+  z-index: 1;
+}
+
+/* Custom Luxury Scrollbar */
+::-webkit-scrollbar {
+  width: 5px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--theme-bg, #FFF8F5);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--theme-primary, #B76E79);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--theme-accent, #D4AF37);
+}
+
+/* Custom cursor hide default */
+@media (pointer: fine) {
+  .custom-cursor-enabled, 
+  .custom-cursor-enabled * {
+    cursor: none !important;
+  }
+}
+
+/* Luxury Paper Stationery Cards */
+.stationery-card {
+  background: var(--theme-card, #FFFFFF);
+  border: 1px solid var(--theme-border, #E8C8C8);
+  box-shadow: 
+    0 10px 30px -15px rgba(107, 74, 74, 0.08),
+    0 1px 3px rgba(107, 74, 74, 0.03),
+    inset 0 0 20px rgba(255, 248, 245, 0.6);
+  position: relative;
+}
+
+/* Gold Foil Letterpress border */
+.gold-foil-border {
+  border: 1px solid var(--theme-accent, #D4AF37);
+  outline: 1px solid transparent;
+  box-shadow: inset 0 0 0 2px var(--theme-card, #FFFFFF), inset 0 0 0 3px var(--theme-accent, #D4AF37);
+}
+
+/* 3D CSS Helpers */
+.perspective-1200 {
+  perspective: 1200px;
+}
+
+.preserve-3d {
+  transform-style: preserve-3d;
+}
+
+.backface-hidden {
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+}
+
+/* Hinge origins */
+.origin-top-hinge {
+  transform-origin: top center;
+}
+
+.origin-bottom-hinge {
+  transform-origin: bottom center;
+}
+
+.origin-left-hinge {
+  transform-origin: left center;
+}
+
+.origin-right-hinge {
+  transform-origin: right center;
+}
+
+/* Gold Shimmer Gradient animation */
+@keyframes shimmer-gold {
+  0% {
+    background-position: -200% center;
+  }
+  100% {
+    background-position: 200% center;
+  }
+}
+
+.shimmer-button {
+  background: linear-gradient(
+    90deg,
+    var(--theme-primary, #B76E79) 0%,
+    var(--theme-accent, #D4AF37) 25%,
+    var(--theme-primary, #B76E79) 50%,
+    var(--theme-accent, #D4AF37) 75%,
+    var(--theme-primary, #B76E79) 100%
+  );
+  background-size: 200% auto;
+  animation: shimmer-gold 8s linear infinite;
+}
+
+/* Hide scrollbar for elements if needed */
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}

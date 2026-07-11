@@ -1,0 +1,29 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 400" width="100%" height="100%">
+  <rect width="400" height="400" fill="#111111"/>
+  <rect x="15" y="15" width="370" height="370" fill="none" stroke="#D4AF37" stroke-width="1" opacity="0.3" />
+  
+  <!-- Line Art: Floral wreath framing two rings -->
+  <g stroke="#D4AF37" fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5">
+    <!-- Wreath Circle base -->
+    <circle cx="200" cy="180" r="110" stroke-width="0.75" stroke-dasharray="1 4" opacity="0.4" />
+    
+    <!-- Leaves on the wreath -->
+    <path d="M110,180 C110,130 150,90 200,90" stroke-width="1" />
+    <path d="M290,180 C290,130 250,90 200,90" stroke-width="1" />
+    <path d="M110,180 C110,230 150,270 200,270" stroke-width="1" />
+    <path d="M290,180 C290,230 250,270 200,270" stroke-width="1" />
+    
+    <!-- Leaf shapes -->
+    <path d="M140,115 Q130,105 145,105 Z" fill="#F5E6B3" opacity="0.3" />
+    <path d="M260,115 Q270,105 255,105 Z" fill="#F5E6B3" opacity="0.3" />
+    <path d="M120,150 Q110,140 125,140 Z" fill="#F5E6B3" opacity="0.3" />
+    <path d="M280,150 Q290,140 275,140 Z" fill="#F5E6B3" opacity="0.3" />
+    <path d="M120,210 Q110,220 125,220 Z" fill="#F5E6B3" opacity="0.3" />
+    <path d="M280,210 Q290,220 275,220 Z" fill="#F5E6B3" opacity="0.3" />
+    
+    <!-- Concentric Rings in center -->
+    <circle cx="180" cy="190" r="30" stroke-width="2" />
+    <circle cx="220" cy="190" r="30" stroke-width="2" />
+  </g>
+  <text x="200" y="360" font-family="'Cinzel', serif" font-size="12" fill="#F5E6B3" font-weight="bold" text-anchor="middle" letter-spacing="3" opacity="0.6">ETERNAL RINGS</text>
+</svg>

@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 600" width="100%" height="100%">
+  <defs>
+    <pattern id="archGrid" width="100" height="150" patternUnits="userSpaceOnUse">
+      <!-- Royal Indian Arch Shape -->
+      <path d="M50,150 L50,80 C50,45 35,30 50,10 C65,30 50,45 50,80 L50,150" fill="none" stroke="#D4AF37" stroke-width="0.5" opacity="0.1" />
+      <path d="M0,80 C0,40 15,20 50,10 C85,20 100,40 100,80 L100,150 L0,150 Z" fill="none" stroke="#D4AF37" stroke-width="0.5" opacity="0.1" />
+      <circle cx="50" cy="10" r="1.5" fill="#D4AF37" opacity="0.2"/>
+    </pattern>
+  </defs>
+  <rect width="800" height="600" fill="none" />
+  <rect width="800" height="600" fill="url(#archGrid)" />
+  <!-- Central Mandap dome line art -->
+  <path d="M250,550 C250,400 300,320 400,320 C500,320 550,400 550,550" fill="none" stroke="#D4AF37" stroke-width="1.5" opacity="0.25" stroke-linecap="round" />
+  <path d="M280,550 C280,430 320,350 400,350 C480,350 520,430 520,550" fill="none" stroke="#D4AF37" stroke-width="0.75" opacity="0.15" />
+  <path d="M400,320 L400,280" fill="none" stroke="#D4AF37" stroke-width="1.5" opacity="0.25" />
+  <circle cx="400" cy="275" r="4" fill="#D4AF37" opacity="0.3" />
+</svg>
