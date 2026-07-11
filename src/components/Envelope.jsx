@@ -124,11 +124,11 @@ export const Envelope = ({ monogram, onOpenComplete }) => {
                 {/* Center Names */}
                 <div className="my-3 space-y-1">
                   <h3 className="font-names text-4xl md:text-5xl text-theme-text tracking-wider">
-                    Aanya
+                    Anushka 
                   </h3>
                   <span className="font-names text-2xl text-theme-primary block my-1">&amp;</span>
                   <h3 className="font-names text-4xl md:text-5xl text-theme-text tracking-wider">
-                    Kabir
+                    Virat
                   </h3>
                 </div>
 
