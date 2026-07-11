@@ -27,7 +27,7 @@ export const Footer = ({ brideName, groomName, contact, socialLinks, monogram })
               {brideName} &amp; {groomName}
             </h2>
             <p className="font-body text-[10px] text-theme-text-muted">
-              The Sharma &amp; Raichand Families
+              The Shekhawat &amp; Rathore Families
             </p>
           </div>
           <div className="pt-2">

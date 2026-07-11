@@ -91,7 +91,7 @@ export const Hero = ({ bride, groom, date, mandapBg }) => {
               With Love From
             </span>
             <p className="font-body text-[11px] text-theme-text-muted">
-              The Sharma &amp; Raichand Families
+              The Shekhawat &amp; Rathod Families
             </p>
           </div>
 
