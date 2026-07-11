@@ -94,7 +94,7 @@ export const Envelope = ({ monogram, onOpenComplete }) => {
                       Wedding Invitation
                     </span>
                     <div className="w-8 h-[1px] bg-theme-primary/45 my-2" />
-                    <h2 className="font-names text-4xl text-theme-text mt-2">Aanya &amp; Kabir</h2>
+                    <h2 className="font-names text-4xl text-theme-text mt-2">Anushka &amp; Virat</h2>
                   </motion.div>
                 )}
               </AnimatePresence>
