@@ -216,7 +216,7 @@ export const Envelope = ({ monogram, onOpenComplete }) => {
                         Wedding Invitation
                       </span>
                       <div className="w-6 h-[1px] bg-theme-primary/30 my-3" />
-                      <h2 className="font-names text-4xl text-theme-text mt-1 select-none">Ritika &amp; Yogendra</h2>
+                      <h2 className="font-names text-4xl text-theme-text mt-1 select-none">Khushi &amp; Ramlal</h2>
                     </motion.div>
                   )}
                 </AnimatePresence>
@@ -245,9 +245,9 @@ export const Envelope = ({ monogram, onOpenComplete }) => {
 
                   {/* Center Names */}
                   <div className="my-2 space-y-1">
-                    <h3 className="font-names text-4xl text-theme-text">Ritika</h3>
+                    <h3 className="font-names text-4xl text-theme-text">Khushi</h3>
                     <span className="font-names text-xl text-theme-primary block">&amp;</span>
-                    <h3 className="font-names text-4xl text-theme-text">Yogendra</h3>
+                    <h3 className="font-names text-4xl text-theme-text">Ramlal</h3>
                   </div>
 
                   {/* Bottom Flap hinge */}
@@ -386,7 +386,7 @@ export const Envelope = ({ monogram, onOpenComplete }) => {
           <div className="w-full text-center flex flex-col items-center space-y-6 pt-4 pointer-events-none">
             {/* Couple names calligraphy with gold foil gradient */}
             <h2 className="font-names text-4xl md:text-5xl text-transparent bg-clip-text bg-gradient-to-r from-[#D4AF37] via-[#F5E6B3] to-[#D4AF37] drop-shadow-[0_1px_3px_rgba(107,74,74,0.18)] font-bold">
-              Yogendra <span className="font-body text-xl text-theme-primary opacity-85 px-1 font-normal">♡</span> Ritika
+              Ramlal <span className="font-body text-xl text-theme-primary opacity-85 px-1 font-normal">♡</span>Khushi
             </h2>
 
             {/* Instruction prompts with elegant typography */}

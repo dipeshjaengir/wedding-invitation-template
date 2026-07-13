@@ -32,14 +32,14 @@ export const weddingData = {
 
   // Couple info
   bride: {
-    name: 'Ritika',
+    name: 'Khushi',
     fullName: 'Ritika Rathore',
     description: 'A creative soul, lover of classical music, and the light of her family\'s eyes. She brings joy and laughter wherever she goes.',
     image: brideImg,
   },
   groom: {
-    name: 'Yogendra',
-    fullName: 'Yogendra Shekhawat',
+    name: 'Ramlal',
+    fullName: 'Ramlal Shekhawat',
     description: 'Yogendra, son of Mr. Dipesh, is a visionary architect, passionate photographer, and a true gentleman. Guided by warmth, intellect, and timeless values.',
     image: groomImg,
   },
@@ -203,7 +203,7 @@ export const weddingData = {
 
   // Social / Family sharing links
   socialLinks: {
-    instagramHashtag: '#RitikaWedYogendra',
+    instagramHashtag: '#KhushiwedsRamlal',
     hashtagLink: 'https://www.instagram.com/explore/tags/RitikaWedYogendra',
   }
 };
