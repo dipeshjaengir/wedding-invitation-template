@@ -33,7 +33,7 @@ export const weddingData = {
   // Couple info
   bride: {
     name: 'Khushi',
-    fullName: 'Ritika Rathore',
+    fullName: 'khushi Rathore',
     description: 'A creative soul, lover of classical music, and the light of her family\'s eyes. She brings joy and laughter wherever she goes.',
     image: brideImg,
   },
